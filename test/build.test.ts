@@ -8,7 +8,7 @@ test('works', async () => {
     });
 
     if (!result.success) {
-        throw 'Buidl Failed';
+        throw 'Build Failed';
     }
 
     console.log('result:\n', await result.outputs[0].text());

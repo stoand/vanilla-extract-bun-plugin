@@ -40,7 +40,27 @@ export const VanillaCssPlugin: BunPlugin = {
             };
         });
 
-         
+        build.onLoad({ filter: cssFileFilter }, async ({ path }) => {
+
+            const identOption = build.config.minify ? 'short' : 'debug';
+
+            const { source, watchFiles } = await compile({
+                filePath: path,
+                identOption,
+            });
+
+            const contents = processVanillaFile({
+                source,
+                filePath: path,
+                identOption,
+            });
+
+            return {
+                contents,
+                loader: 'js',
+                watchFiles,
+            };
+        });
     },
 };
 
