@@ -1,0 +1,14 @@
+{
+  "name": "vanilla-extract-bun-plugin",
+  "module": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@vanilla-extract/integration": "^7.1.12"
+  }
+}
